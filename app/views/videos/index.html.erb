@@ -1,0 +1,21 @@
+<div class="panel-body">
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <tr>
+        <th>Video File Name</th>
+        <th>Status</th>
+      </tr>
+      
+      <% @videos.each do |video| %>
+      <tr>
+        <td>
+          <%= video.video.name %>
+        </td>
+        <td>
+          <%= link_to "show", video_path(video.id) %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

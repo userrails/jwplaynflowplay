@@ -1,0 +1,45 @@
+<div class="panel-body">
+  <a
+    href="<%= @video.video.url %>"
+    style="display:block; height: 300px; width: 640px; z-index: 100px;"
+    id="player">
+  </a>
+
+  <%= javascript_include_tag "flowplayer-3.2.6.min"  %>
+
+  <script type="text/javascript">
+    flowplayer("player", {src: "/assets/flowplayer/flowplayer-3.2.6.swf", wmode: "transparent"},
+    {clip: {
+        autoPlay: false,
+        autoBuffering: true
+      }}
+    );
+  </script>
+
+</div>
+
+<br/><br/>
+
+<div class="panel-body">
+<%#*<script type="text/javascript">jwplayer.key = "u223Cjasxi+MBL4pWJhKALFekqeIHP1TWEWUWg==";</script>%>
+  <div id="video"></div>
+  <script type="text/javascript">
+    jwplayer("video").setup({
+      flashplayer: "/myassets/jwplayer/jwplayer.flash.swf",
+      file: "<%= @video.video.url %>",
+      image: "/myassets/images/rails.png",
+      height: 300,
+      skin: "/skins/five.xml",
+<%#*advertising: {%>
+<%#*client: "vast",%>
+<%#*tag: "http://adserver.com/vastTag.xml"%>
+<%#*},%>
+      width: 640,
+      analytics: {
+        enabled: false,
+        cookies: false
+      }
+    });
+  </script>
+
+</div>

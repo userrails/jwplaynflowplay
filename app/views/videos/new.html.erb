@@ -1,0 +1,15 @@
+<div class="panel-body">
+  <%= form_for @video do |f| %>
+    <div class="row-fluid">
+      <div class="col-sm-12">
+        <%= f.file_field :video %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="col-sm-12">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
